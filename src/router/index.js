@@ -3,19 +3,19 @@ import Router from 'vue-router'
 // 登录
 const login = () => import('../view/login');
 //欢迎登录/home
-const home =() => import('../view/home')
-const welcome = () => import('../view/welcome')
+const home =() => import('../view/home');
+const welcome = () => import('../view/welcome');
 //用户管理
-const user =  () => import('../view/user'),
+const user =  () => import('../view/user'); 
 //权限管理
-const roles =  () => import('../view/power/roles'),
-const rights = () => import('../view/power/rights'),
+const roles =  () => import('../view/power/roles');
+const rights = () => import('../view/power/rights');
 
 // 商品管理
-// const Categories = () => import(/* webpackChunkName: "goods" */ "components/goods/Categories.vue")
-// const Params = () => import(/* webpackChunkName: "goods" */ "components/goods/Params.vue")
-// const List = () => import(/* webpackChunkName: "goods" */ "components/goods/List.vue")
-// const AddGoods = () => import(/* webpackChunkName: "goods" */ "components/goods/AddGoods.vue")
+const Categories = () => import("../view/goods/Categories.vue")
+const Params = () => import("../view/goods/Params.vue")
+const List = () => import( "../view/goods/List.vue")
+const AddGoods = () => import("../view/goods/AddGoods.vue")
 //404
 const NotFd = ()=>import('../view/NotFound/NotFound');
 Vue.use(Router)
@@ -25,7 +25,7 @@ const routes = [
     name: '/',
     redirect: '/login'
   },
-  {    redirect: '/'
+  {   
     path: '/login',
     name: 'login',
     component: login
@@ -42,12 +42,15 @@ const routes = [
       { path: '/roles', component: roles},
       { path: '/users', component: user},
       { path: '/rights', component: rights},
+      { path: '/goods', component: List},
+      { path: '/add',component:AddGoods},
+      { path: '/params', component: Params},
+      { path: '/categories', component: Categories},
     ]
   },
   {
     path: '*',
-
-    component:'NotFd'
+    component:NotFd
   }
 ]
 const router = new Router({

@@ -238,7 +238,6 @@ export default {
               roleDesc: this.Edit.mobile,
             })
             .then((res) => {
-              console.log(res);
               if (res.meta.status != "201") {
                 return this.$message.error({
                   message: res.meta.msg,
@@ -263,7 +262,6 @@ export default {
     //获取角色列表
     getUerList() {
       axios("roles").then((res) => {
-        console.log(res);
         if (res.meta.status == "200") {
           this.userList = res.data;
         }
@@ -304,7 +302,6 @@ export default {
           roleDesc: this.Editting.mobile,
         })
         .then((res) => {
-          console.log(res);
           if (res.meta.status == "200") {
             this.getUerList();
             this.dialogUserVis = false;
@@ -319,7 +316,6 @@ export default {
     },
     //删除用户
     deUser(user) {
-      console.log(user);
       this.$confirm("此操作将永久删除该用户, 是否继续?", "提示", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
@@ -357,7 +353,6 @@ export default {
     },
     //遍历寻找已有权限
     getActive(node, arr) {
-      console.log(node);
       if (!node.children) {
         return arr.push(node.id);
       }
