@@ -1,6 +1,6 @@
 <template>
-  <div>
-      Params
+  <div id="params">
+      
   </div>
 </template>
 
@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style>
-
+#params{
+  background: #fff;
+}
 </style>

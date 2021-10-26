@@ -2756,7 +2756,7 @@
     "assign-symbols" "^1.0.0"
     "is-extendable" "^1.0.1"
 
-"extend@^3.0.1", "extend@^3.0.2":
+"extend@^3.0.2":
   "integrity" "sha1-+LETa0Bx+9jrFAr/hYsQGewpFfo="
   "resolved" "https://registry.npm.taobao.org/extend/download/extend-3.0.2.tgz"
   "version" "3.0.2"
@@ -4039,7 +4039,7 @@
 
 "lodash@^4.17.11", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.17.3", "lodash@^4.17.4", "lodash@^4.2.0":
   "integrity" "sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw="
-  "resolved" "https://registry.nlark.com/lodash/download/lodash-4.17.21.tgz"
+  "resolved" "https://registry.npm.taobao.org/lodash/download/lodash-4.17.21.tgz"
   "version" "4.17.21"
 
 "log-symbols@^2.1.0":
@@ -5814,15 +5814,15 @@
     "extend" "^3.0.2"
     "fast-diff" "1.1.2"
 
-"quill@^1.3.6":
-  "integrity" "sha1-mfTeH+6FkloNfUFjttgyjyMxek0="
-  "resolved" "https://registry.nlark.com/quill/download/quill-1.3.6.tgz"
-  "version" "1.3.6"
+"quill@^1.3.4":
+  "integrity" "sha1-2lsvOixHDpMjQM2/NmjJ8h+Shug="
+  "resolved" "https://registry.nlark.com/quill/download/quill-1.3.7.tgz"
+  "version" "1.3.7"
   dependencies:
     "clone" "^2.1.1"
     "deep-equal" "^1.0.1"
     "eventemitter3" "^2.0.3"
-    "extend" "^3.0.1"
+    "extend" "^3.0.2"
     "parchment" "^1.1.4"
     "quill-delta" "^3.6.2"
 
@@ -6827,11 +6827,6 @@
   "resolved" "https://registry.npm.taobao.org/timsort/download/timsort-0.3.0.tgz"
   "version" "0.3.0"
 
-"tinymce@^5.1.0":
-  "integrity" "sha1-NO/yitqbkzBaDQiGDPgtLt/yaco="
-  "resolved" "https://registry.npmmirror.com/tinymce/download/tinymce-5.1.0.tgz?cache=0&sync_timestamp=1633922302629&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftinymce%2Fdownload%2Ftinymce-5.1.0.tgz"
-  "version" "5.1.0"
-
 "to-arraybuffer@^1.0.0":
   "integrity" "sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M="
   "resolved" "https://registry.npm.taobao.org/to-arraybuffer/download/to-arraybuffer-1.0.1.tgz"
@@ -7194,6 +7189,14 @@
     "vue-hot-reload-api" "^2.2.0"
     "vue-style-loader" "^3.0.0"
     "vue-template-es2015-compiler" "^1.6.0"
+
+"vue-quill-editor@^3.0.6":
+  "integrity" "sha1-H4VkYhHWijGoCnLLf0W7LxGbyPs="
+  "resolved" "https://registry.nlark.com/vue-quill-editor/download/vue-quill-editor-3.0.6.tgz"
+  "version" "3.0.6"
+  dependencies:
+    "object-assign" "^4.1.1"
+    "quill" "^1.3.4"
 
 "vue-router@^3.0.1":
   "integrity" "sha1-X1Xj8lGXDjbD6NiKfNLWejUK3lw="

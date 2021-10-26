@@ -69,7 +69,7 @@
               <el-checkbox
                 border
                 :label="title"
-                v-for="(title, index) in item.attr_vals"
+                v-for="(title,index) in item.attr_vals"
                 :key="index"
                 style="margin-right: 10px"
               ></el-checkbox>
@@ -79,50 +79,40 @@
       </el-tab-pane>
       <el-tab-pane label="商品属性" name>
         <el-form label-position="top" label-width="80px">
-          <el-form-item :label="item.attr_name" v-for="item in only" :key='item'>
+          <el-form-item
+            :label="item.attr_name"
+            v-for="item in only"
+            :key="item.attr_id"
+          >
             <el-input :value="item.attr_vals"></el-input>
           </el-form-item>
         </el-form>
       </el-tab-pane>
       <el-tab-pane label="商品图片" name>
-        <el-upload action="#" list-type="picture-card" :auto-upload="false">
-          <i slot="default" class="el-icon-plus"></i>
-          <div slot="file" slot-scope="{ file }">
-            <img
-              class="el-upload-list__item-thumbnail"
-              :src="file.url"
-              alt=""
-            />
-            <span class="el-upload-list__item-actions">
-              <span
-                class="el-upload-list__item-preview"
-                @click="handlePictureCardPreview(file)"
-              >
-                <i class="el-icon-zoom-in"></i>
-              </span>
-              <span
-                v-if="!disabled"
-                class="el-upload-list__item-delete"
-                @click="handleDownload(file)"
-              >
-                <i class="el-icon-download"></i>
-              </span>
-              <span
-                v-if="!disabled"
-                class="el-upload-list__item-delete"
-                @click="handleRemove(file)"
-              >
-                <i class="el-icon-delete"></i>
-              </span>
-            </span>
-          </div>
+        <el-upload
+          action="http://127.0.0.1:8888/api/private/v1/upload"
+          list-type="picture-card"
+          :on-preview="handlePictureCardPreview"
+          :on-remove="handleRemove"
+          :headers='headerObj'
+          :on-success='uploadSuccess'
+          :limit='5'
+          :drag='true'
+          :disabled='digStatus'
+          :on-exceed='handleExceed'
+        >
+          <i class="el-icon-plus"></i>
         </el-upload>
         <el-dialog :visible.sync="dialogVisible">
           <img width="100%" :src="dialogImageUrl" alt="" />
         </el-dialog>
       </el-tab-pane>
-      <el-tab-pane label="商品内容" name >
-        <tinymce></tinymce>
+      <el-tab-pane label="商品内容" name>
+        <!-- <editor :content="parentContent"></editor>   -->
+        <quill-editor theme="snow"></quill-editor>
+        <el-row style="margin-top:20px">
+           <el-button type="primary" @click='addShop'>添加商品</el-button>
+        </el-row>
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -130,12 +120,13 @@
 
 <script>
 import axios from "axios";
-import tinymce from '../../components/commonn/rich.vue';
+import editor from "./VueEditor";
 export default {
   name: "AddGoods",
   data() {
     return {
       actived: 1, //steps进度
+      parentContent: "",
       // 用于保存添加的商品信息
       addForm: {
         goods_name: "123",
@@ -150,10 +141,11 @@ export default {
         goods_introduce: "",
         attrs: [],
       },
+      digStatus:false,//是否禁用上传
       uploadUrl: "http://120.53.120.229:8888/api/private/v1/upload",
       // 图片上传的请求头
       headerObj: {
-        Authorization: window.sessionStorage.getItem("token"),
+        Authorization:window.sessionStorage.getItem("token"),
       },
       id: "", //当前所选三级分支
       many: [], //商品参数
@@ -186,7 +178,7 @@ export default {
       disabled: false,
     };
   },
-  components:{tinymce},
+  components: { editor },
   created() {
     this.getCate();
   },
@@ -267,6 +259,37 @@ export default {
     handleDownload(file) {
       console.log(file);
     },
+    //上传成功
+    uploadSuccess(response, file, fileList){
+      console.log(file,fileList)
+      this.addForm.pics = fileList
+    },
+    //文件超出回调
+    handleExceed(files, fileList){
+      console.log(files);
+      console.log(fileList)
+    },
+    //删除图片
+    handleRemove(file, fileList){
+      console.log(file, fileList)
+    },
+    addShop(){
+      let goods_cat = this.addForm.goods_cat.join(',')
+      this.addForm.goods_cat = goods_cat
+      axios.post('goods',this.addForm).then(res=>{
+        console.log(res)
+        this.addForm.goods_cat = [];
+        if(res.meta.status ='200'){
+          this.$message.success({
+            message:res.meta.msg
+          })
+        }else{
+            this.$message.error({
+            message:res.meta.msg
+          })
+        }
+      })
+    }
   },
 };
 </script>
