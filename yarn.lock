@@ -19,6 +19,11 @@
     "lodash" "^4.2.0"
     "to-fast-properties" "^2.0.0"
 
+"@tinymce/tinymce-vue@^3.0.1":
+  "integrity" "sha1-xga11rBwSn/B79+W72CAzcI8iPM="
+  "resolved" "https://registry.npmmirror.com/@tinymce/tinymce-vue/download/@tinymce/tinymce-vue-3.0.1.tgz"
+  "version" "3.0.1"
+
 "@types/q@^1.5.1":
   "integrity" "sha1-daKo59irSyMEFFBdkjNdHctTpt8="
   "resolved" "https://registry.nlark.com/@types/q/download/@types/q-1.5.5.tgz"
@@ -1498,6 +1503,11 @@
   "resolved" "https://registry.npm.taobao.org/clone/download/clone-1.0.4.tgz"
   "version" "1.0.4"
 
+"clone@^2.1.1":
+  "integrity" "sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18="
+  "resolved" "https://registry.npm.taobao.org/clone/download/clone-2.1.2.tgz"
+  "version" "2.1.2"
+
 "co@^4.6.0":
   "integrity" "sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ="
   "resolved" "https://registry.nlark.com/co/download/co-4.6.0.tgz?cache=0&sync_timestamp=1618847008095&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fco%2Fdownload%2Fco-4.6.0.tgz"
@@ -2624,6 +2634,11 @@
     "stream-combiner" "^0.2.2"
     "through" "^2.3.8"
 
+"eventemitter3@^2.0.3":
+  "integrity" "sha1-teEHm1n7XhuidxwKmTvgYKWMmbo="
+  "resolved" "https://registry.npm.taobao.org/eventemitter3/download/eventemitter3-2.0.3.tgz"
+  "version" "2.0.3"
+
 "eventemitter3@^4.0.0":
   "integrity" "sha1-Lem2j2Uo1WRO9cWVJqG0oHMGFp8="
   "resolved" "https://registry.npm.taobao.org/eventemitter3/download/eventemitter3-4.0.7.tgz"
@@ -2741,6 +2756,11 @@
     "assign-symbols" "^1.0.0"
     "is-extendable" "^1.0.1"
 
+"extend@^3.0.1", "extend@^3.0.2":
+  "integrity" "sha1-+LETa0Bx+9jrFAr/hYsQGewpFfo="
+  "resolved" "https://registry.npm.taobao.org/extend/download/extend-3.0.2.tgz"
+  "version" "3.0.2"
+
 "extglob@^2.0.4":
   "integrity" "sha1-rQD+TcYSqSMuhxhxHcXLWrAoVUM="
   "resolved" "https://registry.npm.taobao.org/extglob/download/extglob-2.0.4.tgz"
@@ -2774,6 +2794,11 @@
   "integrity" "sha1-On1WtVnWy8PrUSMlJE5hmmXGxSU="
   "resolved" "https://registry.npm.taobao.org/fast-deep-equal/download/fast-deep-equal-3.1.3.tgz"
   "version" "3.1.3"
+
+"fast-diff@1.1.2":
+  "integrity" "sha1-S2LEK44D3j+EhGC2OQeZIGldAVQ="
+  "resolved" "https://registry.npm.taobao.org/fast-diff/download/fast-diff-1.1.2.tgz"
+  "version" "1.1.2"
 
 "fast-json-stable-stringify@^2.0.0":
   "integrity" "sha1-h0v2nG9ATCtdmcSBNBOZ/VWJJjM="
@@ -4713,6 +4738,11 @@
   dependencies:
     "no-case" "^2.2.0"
 
+"parchment@^1.1.4":
+  "integrity" "sha1-rt7Xq5OP6SHUw0vDOc4RaLwv/eU="
+  "resolved" "https://registry.nlark.com/parchment/download/parchment-1.1.4.tgz"
+  "version" "1.1.4"
+
 "parse-asn1@^5.0.0", "parse-asn1@^5.1.5":
   "integrity" "sha1-OFCAo+wTy2KmLTlAnLPoiETNrtQ="
   "resolved" "https://registry.npm.taobao.org/parse-asn1/download/parse-asn1-5.1.6.tgz"
@@ -5775,6 +5805,27 @@
   "resolved" "https://registry.nlark.com/querystringify/download/querystringify-2.2.0.tgz"
   "version" "2.2.0"
 
+"quill-delta@^3.6.2":
+  "integrity" "sha1-sZ/SuJQSMBxg4f8hPY2GDqwPEDI="
+  "resolved" "https://registry.nlark.com/quill-delta/download/quill-delta-3.6.3.tgz"
+  "version" "3.6.3"
+  dependencies:
+    "deep-equal" "^1.0.1"
+    "extend" "^3.0.2"
+    "fast-diff" "1.1.2"
+
+"quill@^1.3.6":
+  "integrity" "sha1-mfTeH+6FkloNfUFjttgyjyMxek0="
+  "resolved" "https://registry.nlark.com/quill/download/quill-1.3.6.tgz"
+  "version" "1.3.6"
+  dependencies:
+    "clone" "^2.1.1"
+    "deep-equal" "^1.0.1"
+    "eventemitter3" "^2.0.3"
+    "extend" "^3.0.1"
+    "parchment" "^1.1.4"
+    "quill-delta" "^3.6.2"
+
 "randombytes@^2.0.0", "randombytes@^2.0.1", "randombytes@^2.0.5":
   "integrity" "sha1-32+ENy8CcNxlzfYpE0mrekc9Tyo="
   "resolved" "https://registry.nlark.com/randombytes/download/randombytes-2.1.0.tgz"
@@ -6776,6 +6827,11 @@
   "resolved" "https://registry.npm.taobao.org/timsort/download/timsort-0.3.0.tgz"
   "version" "0.3.0"
 
+"tinymce@^5.1.0":
+  "integrity" "sha1-NO/yitqbkzBaDQiGDPgtLt/yaco="
+  "resolved" "https://registry.npmmirror.com/tinymce/download/tinymce-5.1.0.tgz?cache=0&sync_timestamp=1633922302629&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ftinymce%2Fdownload%2Ftinymce-5.1.0.tgz"
+  "version" "5.1.0"
+
 "to-arraybuffer@^1.0.0":
   "integrity" "sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M="
   "resolved" "https://registry.npm.taobao.org/to-arraybuffer/download/to-arraybuffer-1.0.1.tgz"
@@ -7165,7 +7221,7 @@
   "resolved" "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.0.0", "vue@^2.5.17", "vue@^2.5.2":
+"vue@^2.0.0", "vue@^2.4.3", "vue@^2.5.17", "vue@^2.5.2":
   "integrity" "sha1-5RqlJQJQ1Wmj+606ilpofWA24jU="
   "resolved" "https://registry.npmmirror.com/vue/download/vue-2.6.14.tgz?cache=0&sync_timestamp=1633712767060&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fvue%2Fdownload%2Fvue-2.6.14.tgz"
   "version" "2.6.14"

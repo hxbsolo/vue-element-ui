@@ -1,5 +1,5 @@
 <template>
-  <el-main>
+<div>
     <div class="main_top">
       <el-breadcrumb separator-class="el-icon-arrow-right">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
@@ -160,7 +160,7 @@
         </div>
       </el-card>
     </div>
-  </el-main>
+    </div>
 </template>
 
 <script>
