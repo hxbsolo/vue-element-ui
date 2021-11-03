@@ -7,6 +7,8 @@ const home =() => import('../view/home');
 const welcome = () => import('../view/welcome');
 //用户管理
 const user =  () => import('../view/user'); 
+//读取身份证
+const id = ()=>import('../view/user/ID');
 //权限管理
 const roles =  () => import('../view/power/roles');
 const rights = () => import('../view/power/rights');
@@ -46,8 +48,10 @@ const routes = [
       { path: '/add',component:AddGoods},
       { path: '/params', component: Params},
       { path: '/categories', component: Categories},
+      { path:'/ID',component:id},
     ]
   },
+
   {
     path: '*',
     component:NotFd

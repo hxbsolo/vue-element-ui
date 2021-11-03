@@ -17,6 +17,11 @@
                   >Welcome</el-dropdown-item
                 >
                 <el-dropdown-item
+                  icon="el-icon-user-solid"
+                  command="/ID"
+                  >读取身份证</el-dropdown-item
+                >
+                <el-dropdown-item
                   icon="el-icon-close"
                   command='out'
                   >退出</el-dropdown-item
@@ -152,6 +157,7 @@ export default {
         });
       }
     },
+
   },
 };
 </script>

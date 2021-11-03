@@ -1,9 +1,6 @@
 <template>
   <div id="login">
     <div class="login_box">
-      <div class="login_portrait">
-        <img src="https://i.loli.net/2021/10/19/tZsc4RoVTO2UBLj.jpg" alt="" />
-      </div>
       <div class="logins">
         <el-form>
           <el-form-item>
@@ -56,11 +53,14 @@ export default {
           console.log;
           if (res.meta.status == "200" && res.meta.msg == "登录成功") {
             //存储用户信息
-            window.sessionStorage.setItem('user',JSON.stringify(res.data))
+            window.sessionStorage.setItem("user", JSON.stringify(res.data));
             //存储token信息
             window.sessionStorage.setItem("token", res.data.token);
             //成功跳转首页
-            if(  window.sessionStorage.getItem('user') && window.sessionStorage.getItem('token')){
+            if (
+              window.sessionStorage.getItem("user") &&
+              window.sessionStorage.getItem("token")
+            ) {
               this.$router.push("/home");
             }
           } else {
@@ -90,17 +90,18 @@ export default {
 #login {
   width: 100%;
   height: 100vh;
-  background: #b6e8f3;
+  background: url("https://i.loli.net/2021/11/03/hq3PXFK1f2Iy5cW.jpg");
+  background-size: 100% 100%;
 }
 .login_box {
   width: 450px;
   height: 300px;
-  background: #fff;
   border-radius: 3px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  background: linear-gradient(#feac5e, transparent, #0083b0);
 }
 .login_portrait {
   padding: 10px;
